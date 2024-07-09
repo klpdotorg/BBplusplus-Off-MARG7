@@ -110,7 +110,7 @@ var app = {
     //* app_Mode is variable we are going to use to indicate online/offline
     this.app_Mode = "offline"; //online//* Set to to offline if you want to generate offline app
     if (this.app_Mode == "offline") {
-      window.languageSelected = "Kannada"; //* Set this variable based on the language you need to generate - Offline
+      window.languageSelected = "Marathi"; //* Set this variable based on the language you need to generate - Offline
     }
     console.log(this.app_Mode, "App MODE ///");
     game.input.maxPointers = 1;

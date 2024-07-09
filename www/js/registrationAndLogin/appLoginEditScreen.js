@@ -44,7 +44,7 @@ Game.appLoginEditScreen.prototype = {
 		_this.i = 0;
 
 		//_this.basePath = cordova.file.externalRootDirectory+"Android/data/com.akshara.easymath/Files/Download/.gameFilesBBV5_0_5/www/";
-		_this.basePath = cordova.file.externalRootDirectory + "Android/data/com.akshara.BBplusplusOffKanG7/Files/Download/.gameFilesBB++V10_2/www/";
+		_this.basePath = cordova.file.externalRootDirectory + "Android/data/com.akshara.BBplusplusOffMarG7/Files/Download/.gameFilesBB++V10_2/www/";
 
 		//* nEED to change this ****
 		_this.fullSize = 199718252// 199659199;
@@ -126,7 +126,7 @@ Game.appLoginEditScreen.prototype = {
 		// }
 		else if (_this.user.language == "Marathi") {
 			_this.fileCheck = [
-				[_this.basePath + "questionSounds/AL-ADD-G7/Marathi", _this.user.language + "/MARquestionSounds.zip"],
+				[_this.basePath + "questionSounds/AL-ADD-G7/Marathi", _this.user.language + "/MarathiquestionSounds.zip"],
 				[_this.basePath + "assets/commonAssets", "Assets1.zip"],
 				[_this.basePath + "assets/demoVideos", "Assets2.zip"],
 				// [_this.basePath + "assets/exitAssets", _this.user.language ) + "/Assets3.zip"],
@@ -141,7 +141,7 @@ Game.appLoginEditScreen.prototype = {
 		// }
 		else if (_this.user.language == "Tamil") {
 			_this.fileCheck = [
-				[_this.basePath + "questionSounds/AL-ADD-G7/Tamil", _this.user.language + "/TMquestionSounds.zip"],
+				[_this.basePath + "questionSounds/AL-ADD-G7/Tamil", _this.user.language + "/TamilquestionSounds.zip"],
 				[_this.basePath + "assets/commonAssets", "Assets1.zip"],
 				[_this.basePath + "assets/demoVideos", "Assets2.zip"],
 				// [_this.basePath + "assets/exitAssets", _this.user.language ) + "/Assets3.zip"],
@@ -427,7 +427,7 @@ Game.appLoginEditScreen.prototype = {
 		else {
 
 			localStorage.setItem("downloadComplete", "true");
-			window.baseUrl = cordova.file.externalRootDirectory + "Android/data/com.akshara.BBplusplusOffKanG7/Files/Download/.gameFilesBB++V10_2/www/";//cordova.file.externalDataDirectory + 
+			window.baseUrl = cordova.file.externalRootDirectory + "Android/data/com.akshara.BBplusplusOffMarG7/Files/Download/.gameFilesBB++V10_2/www/";//cordova.file.externalDataDirectory + 
 
 			_this.regBackArrow.inputEnabled = true;
 			_this.regBackArrow.events.onInputDown.add(function () {
@@ -476,8 +476,8 @@ Game.appLoginEditScreen.prototype = {
 						// 	console.log("sounds");
 						// 	_this.noOfAssets.text = "1/5";
 						// }
-					//	else 
-					if (filename == _this.user.language + "/KannadaquestionSounds.zip") {
+						//	else 
+						if (filename == _this.user.language + "/KannadaquestionSounds.zip") {
 							console.log("KannadaquestionSounds");
 							_this.noOfAssets.text = "1/5";
 						}
