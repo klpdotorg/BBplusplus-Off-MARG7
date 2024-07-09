@@ -477,7 +477,7 @@ Game.appLoginEditScreen.prototype = {
 						// 	_this.noOfAssets.text = "1/5";
 						// }
 						//	else 
-						if (filename == _this.user.language + "/KannadaquestionSounds.zip") {
+						if (filename == _this.user.language + "/MarathiquestionSounds.zip") {
 							console.log("KannadaquestionSounds");
 							_this.noOfAssets.text = "1/5";
 						}
