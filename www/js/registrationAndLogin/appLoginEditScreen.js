@@ -49,11 +49,6 @@ Game.appLoginEditScreen.prototype = {
 		//* nEED to change this ****
 		_this.fullSize = 199718252// 199659199;
 
-		//* change this zip file size according to bb++ ******
-		// _this.zipFiles = [["Assets1.zip", 26430143], ["Assets2.zip", 39780906], ["Assets3.zip", 18453216],
-		// ["Assets4.zip", 14402031], ["Assets5.zip", 19891065], ["Assets6.zip", 19889389],
-		// ["English.zip", 23759971], ["Kannada.zip", 25787866], ["Hindi.zip", 25508626],
-		// ["Odiya.zip", 40129117], ["Gujarati.zip", 31882078], ["questionSounds.zip", 162758079]];
 
 		_this.zipFiles = [["Assets1.zip", 981561], ["Assets2.zip", 20384015], ["Assets4.zip", 20580194], ["EnglishquestionSounds.zip", 44579738], ["HindiquestionSounds.zip", 57950883],
 		["KannadaquestionSounds.zip", 51499061], ["sounds.zip", 3742800]];//3,742,800
@@ -76,17 +71,6 @@ Game.appLoginEditScreen.prototype = {
 			];
 		}
 
-		// if (_this.user.language == "English") {
-		// 	_this.fileCheck = [
-		// 		//[_this.basePath + "sounds", "sounds.zip"],
-		// 		[_this.basePath + "questionSounds/AL-ADD-G7/English", _this.user.language + "/EnglishquestionSounds.zip"],//ENG
-		// 		[_this.basePath + "assets/commonAssets", "Assets1.zip"],
-		// 		[_this.basePath + "assets/demoVideos", "Assets2.zip"],
-		// 		// [_this.basePath + "assets/exitAssets", _this.user.language ) + "/Assets3.zip"],
-		// 		[_this.basePath + "assets/gradeAssets", "Assets4.zip"]
-		// 		// [_this.basePath + "assets/gradeSelectionScreenAssets", _this.user.language ) + "/Assets5.zip"],
-		// 	];
-		// }
 		else if (_this.user.language == "Hindi") {
 			_this.fileCheck = [
 				[_this.basePath + "questionSounds/AL-ADD-G7/Hindi", _this.user.language + "/HINquestionSounds.zip"],
@@ -120,10 +104,7 @@ Game.appLoginEditScreen.prototype = {
 				[_this.basePath + "sounds", "sounds.zip"]
 			];
 		}
-		// else if(_this.user.language == "Gujarati")
-		// {
 
-		// }
 		else if (_this.user.language == "Marathi") {
 			_this.fileCheck = [
 				[_this.basePath + "questionSounds/AL-ADD-G7/Marathi", _this.user.language + "/MarathiquestionSounds.zip"],
@@ -135,10 +116,7 @@ Game.appLoginEditScreen.prototype = {
 				[_this.basePath + "sounds", "sounds.zip"]
 			];
 		}
-		// else if(_this.user.language == "Telugu")
-		// {
 
-		// }
 		else if (_this.user.language == "Tamil") {
 			_this.fileCheck = [
 				[_this.basePath + "questionSounds/AL-ADD-G7/Tamil", _this.user.language + "/TamilquestionSounds.zip"],
@@ -150,20 +128,7 @@ Game.appLoginEditScreen.prototype = {
 				[_this.basePath + "sounds", "sounds.zip"]
 			];
 		}
-		// else if(_this.user.language == "Urdu")
-		// {
-		// 	_this.fileCheck = [
-		// 	[_this.basePath+"questionSounds/1.1A/Urdu","Urdu.zip"],
-		// 	[_this.basePath+"assets/commonAssets","Assets1.zip"],
-		// 	[_this.basePath+"assets/demoVideos","Assets2.zip"],
-		// 	[_this.basePath+"assets/conversion","Assets3.zip"],
-		// 	[_this.basePath+"assets/questionSounds/shoppingGame","Assets4.zip"],
-		// 	[_this.basePath+"assets/gradeAssets/4.1","Assets5.zip"],
-		// 	[_this.basePath+"assets/gradeAssets/6.1","Assets6.zip"],
-		// 	[_this.basePath+"assets/DH1","Assets6New.zip"],
-		// 	[_this.basePath+"assets/AddNew","Assets16.zip"]
-		// 	];	
-		// }
+
 
 		_this.splash = game.add.sprite(game.world.centerX, game.world.centerY, 'registrationbg');
 		_this.splash.scale.setTo(1);
@@ -444,19 +409,19 @@ Game.appLoginEditScreen.prototype = {
 		}
 
 	},
-
+//www
 	goback: function (e) {
 		document.removeEventListener('backbutton', _this.goback, false);
 		_this.state.start('appLoginScreen', true, false, _this.app_Mode, _this.user.language);
 	},
-
+//
 	downloadFiles: function (filename) {
 		console.log("inside downloadFiles");
 		if (navigator.connection.type != "none" && navigator.connection.type != "unknown" && navigator.connection.type != null && navigator.connection.type != "undefined") {
 			_this.displayMessageAndDownloadAgain();
 
 			//_this.baseUrl = "https://abbmath.klp.org.in/abbchmprm/assets/bb5_0_5/";
-			_this.baseUrl = "https://abbmath.klp.org.in/bbplusplus/assets3/";
+			_this.baseUrl = "https://abbmath.klp.org.in/bbplusplus/assets2/";
 			//_this.baseUrl = "https://10.0.2.2/abbchmprm/assets/bb5_0_5/";
 			var fileTransfer = new FileTransfer();
 
@@ -468,7 +433,8 @@ Game.appLoginEditScreen.prototype = {
 					_this.progressPercentageTxt.text = Math.round((progressEvent.loaded / progressEvent.total) * 100) + "%";
 					_this.progressPercentageTxt2.text = Math.round((progressEvent.loaded / progressEvent.total) * 100) + "/100";
 
-					if (filename != "EnglishquestionSounds.zip" && filename != "HindiquestionSounds.zip" && filename != "KannadaquestionSounds.zip") {
+					if (filename != "EnglishquestionSounds.zip" && filename != "HindiquestionSounds.zip" && filename != "KannadaquestionSounds.zip"
+						&& filename != "MarathiquestionSounds.zip") {
 						//console.log("Download !!!!!!");
 						// && filename != "OdiyaquestionSounds.zip" &&
 						//	filename != "MarathiquestionSounds.zip" && filename != "TamilquestionSounds.zip"
@@ -478,7 +444,7 @@ Game.appLoginEditScreen.prototype = {
 						// }
 						//	else 
 						if (filename == _this.user.language + "/MarathiquestionSounds.zip") {
-							console.log("KannadaquestionSounds");
+							console.log("MarathiquestionSounds");
 							_this.noOfAssets.text = "1/5";
 						}
 						else if (filename == "Assets1.zip") {
@@ -573,176 +539,7 @@ Game.appLoginEditScreen.prototype = {
 	shutdown: function () {
 		document.removeEventListener('backbutton', _this.goback, false);
 	}
-
-	/*checkIfAllAssetsArePresent:function(fileCheck)
-	{
-		
-		_this.downloadAll = false;
-
-		window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, 
-			function(fileEntry){
-				fileEntry.file(function(fileObj) {
-						console.log("Size = " + fileObj.size);
-						if(fileObj.size == _this.fullSize)
-						{
-							//start the game.
-						}
-						else
-						{
-							for(var i=0;i<_this.fileCheck.length;i++)
-							{
-								var filename = _this.fileCheck[i][0];
-								var size = _this.fileCheck[i][1];
-								
-								window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory+filename, 
-									function(){
-											//do nothing
-									    
-									}, function(error){
-										_this.downloadFilesIfNotDownloaded(filename);
-										return;
-									});
-							}
-						}
-					},
-					function (error) {
-						console.log("error"+error);
-					});
-				    
-			}, function(error){
-					_this.downloadAll = true;
-		});
-
-		if(_this.downloadAll)
-		{
-			_this.downloadFilesIfNotDownloaded(_this.zipFiles[i][0]);
-			
-		}
-
-	},
-
-	checkIfAnyZipFileIsPresent:function()
-	{
-		var length = _this.zipFiles.length;
-		//for(var i=0;i<length;i++)
-		//{
-			console.log(i);
-			var filename = _this.zipFiles[i][0];
-			var size = _this.zipFiles[i][1];
-			
-			window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory+filename, 
-				function(fileEntry){
-					fileEntry.file(function(fileObj) {
-						console.log("Size = " + fileObj.size);
-						if(fileObj.size == size)
-						{
-							alert("here");
-							zip.unzip(cordova.file.externalDataDirectory+filename, _this.basePath, function(message){
-								console.log(message);
-								if(message==0)
-								{
-									fileEntry.remove(function (file) {
-										console.log("file removed!");
-									}, function (error) {
-										console.log("error occurred: " + error.code);
-									}, function () {
-										console.log("file does not exist");
-									});
-								}
-								else
-								{
-									console.log("error unzipping");
-								}
-							}, function(progressEvent){
-								console.log(Math.round((progressEvent.loaded / progressEvent.total) * 100));
-							});
-						}
-						else
-						{
-							_this.downloadFilesIfNotDownloaded(filename);
-						}
-					},
-					function (error) {
-						console.log("error"+error);
-					});
-				}, function(error){
-					console.log("errors"+error);
-					console.log(i);
-					console.log(length);
-					if(i==length-1)
-					{
-						_this.checkIfAllAssetsArePresent();
-					}
-					
-				});
-		//}
 	
-	},
-
-	
-	downloadFilesIfNotDownloaded:function(filename)
-	{
-		if(navigator.connection.type!="none" && navigator.connection.type!="unknown" && navigator.connection.type!=null && navigator.connection.type!="undefined")
-		{
-			console.log(cordova.file.externalDataDirectory);
-			_this.baseUrl = "https://abbmath.klp.org.in/abbchmprm/assets/bb5_0_5/";
-			var fileTransfer = new FileTransfer();
-
-			fileTransfer.onprogress = function(progressEvent) {
-				if (progressEvent.lengthComputable) {
-					//loadingStatus.setPercentage(progressEvent.loaded / progressEvent.total);
-					console.log((progressEvent.loaded / progressEvent.total)*100);
-				} else {
-					//loadingStatus.increment();
-					//console.log(loadingStatus);
-				}
-			};
-			var uri = encodeURI(_this.baseUrl+filename);
-
-			fileTransfer.download(
-				uri,
-				_this.basePath+filename,
-				function(entry) {
-					console.log("download complete: " + entry.toURL());
-					zip.unzip(_this.basePath+filename, _this.basePath, function(message){
-						console.log(message);
-						if(message==0)
-								{
-									fileEntry.remove(function (file) {
-										console.log("file removed!");
-									}, function (error) {
-										console.log("error occurred: " + error.code);
-									}, function () {
-										console.log("file does not exist");
-									});
-								}
-								else
-								{
-									console.log("error unzipping");
-								}
-					}, function(progressEvent){
-						console.log(Math.round((progressEvent.loaded / progressEvent.total) * 100));
-					});
-				},
-				function(error) {
-					console.log("download error source " + error.source);
-					console.log("download error target " + error.target);
-					console.log("download error code" + error.code);
-				}
-			);
-		}
-		else
-		{
-			window.plugins.toast.show("please check your internet connection and try again", 3000, "bottom");
-			document.addEventListener("online", _this.checkNetwork, false);
-		}
-	},
-
-	checkNetwork:function()
-	{
-		document.removeEventListener("online", _this.checkNetwork, false);
-		_this.create();
-	},*/
 };
 function successFunction() {
 	console.log('Immersive mode set successfully.');
